@@ -110,7 +110,7 @@ class Ui_To_Do_List(object):
         #connect buttons
         self.btn_add.clicked.connect(self.add_task)
         self.btn_completed.clicked.connect(self.mark_completed)
-        self.btn_delete.clicked.connect
+        self.btn_delete.clicked.connect(self.)
 
 
 
