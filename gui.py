@@ -120,4 +120,4 @@ class Ui_To_Do_List(object):
         self.btn_delete.setText(_translate("To_Do_List", "Delete"))
         self.btn_completed_2.setText(_translate("To_Do_List", "All completed"))
         self.btn_all_tasks.setText(_translate("To_Do_List", "Show All"))
-        self.btn_back.setText(_translate("To_Do_List", "Back"))
+        self.btn_back.setText(_translate("To_Do_List", "Uncompleted"))
