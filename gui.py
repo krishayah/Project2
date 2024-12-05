@@ -86,6 +86,11 @@ class Ui_To_Do_List(object):
         self.btn_all_tasks.setObjectName("btn_all_tasks")
         self.horizontalLayout_2.addWidget(self.btn_all_tasks)
 
+        # Add the "Back" button
+        self.btn_back = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_back.setObjectName("btn_back")
+        self.btn_back.setGeometry(QtCore.QRect(288, 351, 75, 23))  # Position and size
+
         To_Do_List.setCentralWidget(self.centralwidget)  #central widget
 
         #menu bar
@@ -115,3 +120,4 @@ class Ui_To_Do_List(object):
         self.btn_delete.setText(_translate("To_Do_List", "Delete"))
         self.btn_completed_2.setText(_translate("To_Do_List", "All completed"))
         self.btn_all_tasks.setText(_translate("To_Do_List", "Show All"))
+        self.btn_back.setText(_translate("To_Do_List", "Back"))
