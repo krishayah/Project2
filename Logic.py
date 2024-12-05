@@ -53,3 +53,10 @@ class APPLogic:
     def get_all_tasks(self):
 
         return self.tasks
+
+    def get_completed_tasks(self):
+
+        return [task for task in self.tasks if task["completed"]]
+
+
+
