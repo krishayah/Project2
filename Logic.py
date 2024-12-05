@@ -23,5 +23,13 @@ class APPLogic:
         except ValueError:
             return "Error: Task input should be in the format 'name, category, priority'."
 
+    def delete_task(self, task_id):
+
+        for task in self.tasks:
+            if task["id"] == task_id:
+                self.tasks.remove(task)
+                return "Task deleted successfully!"
+        return "Error: Task ID not found."
+
 
 
