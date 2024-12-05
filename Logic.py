@@ -50,4 +50,6 @@ class APPLogic:
                or keyword.lower() in task["priority"].lower()
         ]
 
+    def get_all_tasks(self):
 
+        return self.tasks
