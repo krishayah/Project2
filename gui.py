@@ -108,6 +108,10 @@ class Ui_To_Do_List(object):
         self.retranslateUi(To_Do_List)
         QtCore.QMetaObject.connectSlotsByName(To_Do_List)
 
+        #connect buttons
+        self.btn_add.clicked.connect(self.add_task)
+        self.btn_completed.clicked.connect(self.mark_completed)
+
 
     def retranslateUi(self, To_Do_List):
         _translate = QtCore.QCoreApplication.translate
@@ -121,3 +125,10 @@ class Ui_To_Do_List(object):
         self.btn_completed_2.setText(_translate("To_Do_List", "All completed"))
         self.btn_all_tasks.setText(_translate("To_Do_List", "Show All"))
         self.btn_back.setText(_translate("To_Do_List", "Back"))
+
+    #slots
+    def aff_task(self):
+        task_input = self.button_input.toPlainText().strip()
+        message = self.logic.add_task(task_input)
+        self.statusbar.showMessage(message)
+        self.show_all_tasks()
