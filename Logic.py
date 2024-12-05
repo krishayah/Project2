@@ -40,5 +40,14 @@ class APPLogic:
                 return "Task deleted successfully!"
         return "Error: Task ID not found."
 
+    def search_tasks(self, keyword):
+
+        return [
+            task
+            for task in self.tasks
+            if keyword.lower() in task["name"].lower()
+               or keyword.lower() in task["category"].lower()
+               or keyword.lower() in task["priority"].lower()
+        ]
 
 
