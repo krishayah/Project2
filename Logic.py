@@ -42,13 +42,23 @@ class APPLogic:
 
     def search_tasks(self, keyword):
 
-        return [
-            task
-            for task in self.tasks
-            if keyword.lower() in task["name"].lower()
-               or keyword.lower() in task["category"].lower()
-               or keyword.lower() in task["priority"].lower()
-        ]
+        keyword = keyword.lower()
+
+        matching_tasks = [] # Initialize an empty list to store matching tasks
+
+        for task in self.tasks:
+            task_name = task["name"].lower()
+            task_category = task["category"].lower()
+            task_priority = task["priority"].lower()
+
+            # Check if the keyword is present in any of the fields
+            if (keyword in task_name or
+                keyword in task_category or
+                keyword in task_priority):
+                matching_tasks.append(task) # Add the matching task to the result list
+
+        return matching_tasks
+
 
     def get_all_tasks(self):
 
@@ -58,5 +68,6 @@ class APPLogic:
 
         return [task for task in self.tasks if task["completed"]]
 
+    def get_uncompleted_tasks(self):
 
-
+        return [task for task in self.tasks if not task["completed"]]
