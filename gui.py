@@ -144,6 +144,14 @@ class Ui_To_Do_List(object):
         self.statusbar.showMessage(message)
         self.show_all_tasks()
 
+    def delete_task(self):
+        selected_items = self.widget_tasks.selectedItems()
+        if selected_items:
+            task_id = int(selected_items[0].text())
+            message = self.logic.delete_task(task_id)
+            self.statusbar.showMessage(message)
+            self.show_all_tasks()
+
     def mark_completed(self):
         selected_items = self.widget_tasks.selectedItems()
         if selected_items:
@@ -151,8 +159,6 @@ class Ui_To_Do_List(object):
             message = self.logic.mark_completed(task_id)
             self.statusbar.showMessage(message)
             self.show_all_tasks()
-
-
 
     def show_all_tasks(self):
         tasks = self.lineEditSearch.text().strip()
