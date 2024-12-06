@@ -175,6 +175,11 @@ class Ui_To_Do_List(object):
         tasks = self.logic.get_completed_tasks()
         self.update_task_table(tasks)
 
+    def show_uncompleted_tasks(self):
+        """Back button shows uncompleted list of tasks"""
+        tasks = self.logic.get_uncompleted_tasks()
+        self.update_tasks_table(tasks)
+
 
 
 
