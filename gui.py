@@ -134,8 +134,12 @@ class Ui_To_Do_List(object):
     """SLOTS TO CONNECT FUNCTIONS PROPERLY"""
     def update_task_table(self, tasks):
         self.widget_tasks.setRowCount(len(tasks))
+        self.widget_tasks.setColumnCount(4)
+        headers = ["ID", "Name", "Category", "Priority"]
+        self.widget_tasks.setHorizontalHeaderLabels(headers)
+
         for row, task in enumerate(tasks):
-            self.widget_tasks.setItem(row, 0, QTableWidgetItem((task["id"])))
+            self.widget_tasks.setItem(row, 0, QTableWidgetItem(str(task["id"])))
             self.widget_tasks.setItem(row, 1, QTableWidgetItem((task["name"])))
             self.widget_tasks.setItem(row, 2, QTableWidgetItem(task["category"]))
             self.widget_tasks.setItem(row, 3, QTableWidgetItem(task["priority"]))
