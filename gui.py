@@ -133,7 +133,9 @@ class Ui_To_Do_List(object):
         self.widget_tasks.setRowCount(len(tasks))
         for row, task in enumerate(tasks):
             self.widget_tasks.setItem(row, 0, QTableWidgetItem((task["id"])))
-            self.widget_tasks.setItem(row, 1, )
+            self.widget_tasks.setItem(row, 1, QTableWidgetItem((tasks["name"])))
+            self.widget_tasks.setItem(row, 2, QTableWidgetItem(task["category"]))
+            self.widget_tasks.setItem(row, 3, QTableWidgetItem(task["priority"]))
 
     def add_task(self):
         task_input = self.button_input.toPlainText().strip()
@@ -147,7 +149,8 @@ class Ui_To_Do_List(object):
             task_id = int(selected_items[0].text())
             message = self.logic.mark_completed(task_id)
             self.statusbar.showMessage(message)
-            self.show_all_tasks
+            self.show_all_tasks()
+
 
 
     def show_all_tasks(self):
