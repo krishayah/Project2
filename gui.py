@@ -160,9 +160,19 @@ class Ui_To_Do_List(object):
             self.statusbar.showMessage(message)
             self.show_all_tasks()
 
-    def show_all_tasks(self):
-        tasks = self.lineEditSearch.text().strip()
+    def search_task(self):
+        keyword = self.lineEditSearch.text().strip()
+        tasks = self.logic.search_tasks(keyword)
         self.update_task_table(tasks)
+
+    def show_all_tasks(self):
+        tasks = self.logic.get_all_tasks()
+        self.update_task_table(tasks)
+
+    def show_completed_tasks(self):
+        tasks = self.logic.get_completed_tasks()
+        self.update_task_table(tasks)
+
 
 
 
