@@ -110,9 +110,10 @@ class Ui_To_Do_List(object):
         #connect buttons
         self.btn_add.clicked.connect(self.add_task)
         self.btn_completed.clicked.connect(self.mark_completed)
-        self.btn_delete.clicked.connect(self.)
-
-
+        self.btn_delete.clicked.connect(self.deletea_task)
+        self.btn_search.clicked.connect(self.search_task)
+        self.btn_all_tasks.clicked.connect(self.show_all_tasks)
+        self.btn_completed_2.clicked.connect(self.show_completed_tasks)
 
 
     def retranslateUi(self, To_Do_List):
