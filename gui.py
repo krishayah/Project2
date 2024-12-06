@@ -136,7 +136,7 @@ class Ui_To_Do_List(object):
         self.widget_tasks.setRowCount(len(tasks))
         for row, task in enumerate(tasks):
             self.widget_tasks.setItem(row, 0, QTableWidgetItem((task["id"])))
-            self.widget_tasks.setItem(row, 1, QTableWidgetItem((tasks["name"])))
+            self.widget_tasks.setItem(row, 1, QTableWidgetItem((task["name"])))
             self.widget_tasks.setItem(row, 2, QTableWidgetItem(task["category"]))
             self.widget_tasks.setItem(row, 3, QTableWidgetItem(task["priority"]))
 
