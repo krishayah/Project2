@@ -122,7 +122,7 @@ class Ui_To_Do_List(object):
 
     def retranslateUi(self, To_Do_List):
         _translate = QtCore.QCoreApplication.translate
-        To_Do_List.setWindowTitle(_translate("To_Do_List", "MainWindow"))
+        To_Do_List.setWindowTitle(_translate("To_Do_List", "To Do List Manager"))
         self.button_input.setPlaceholderText(_translate("To_Do_List", "Enter Task Name, Category, Priority"))
         self.lineEditSearch.setPlaceholderText(_translate("To_Do_List", "Enter keyword to search"))
         self.btn_search.setText(_translate("To_Do_List", "Search"))
