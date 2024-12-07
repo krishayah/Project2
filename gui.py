@@ -18,7 +18,9 @@ class Ui_To_Do_List(object):
 
         To_Do_List.setObjectName("To_Do_List")
         To_Do_List.resize(640, 480)
-        To_Do_List.setMinimumSize(QtCore.QSize(0, 0))
+        To_Do_List.setMinimumSize(QtCore.QSize(640, 480))
+        To_Do_List.setMaximumSize(QtCore.QSize(640, 480))
+
 
         self.centralwidget = QtWidgets.QWidget(parent=To_Do_List)
         self.centralwidget.setObjectName("centralwidget")
