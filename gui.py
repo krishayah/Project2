@@ -32,14 +32,14 @@ class Ui_To_Do_List(object):
 
         # Table widget for displaying tasks
         self.widget_tasks = QtWidgets.QTableWidget(parent=self.centralwidget)
-        self.widget_tasks.setGeometry(QtCore.QRect(170, 130, 311, 211))
+        self.widget_tasks.setGeometry(QtCore.QRect(90, 130, 471, 241))
         self.widget_tasks.setObjectName("widget_tasks")
         self.widget_tasks.setColumnCount(0)
         self.widget_tasks.setRowCount(0)
 
         # Horizontal layout for search input & button
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(170, 90, 311, 33))
+        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(90, 90, 471, 33))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
