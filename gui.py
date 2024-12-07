@@ -92,7 +92,7 @@ class Ui_To_Do_List(object):
         # Add the "Back" button
         self.btn_back = QtWidgets.QPushButton(parent=self.centralwidget)
         self.btn_back.setObjectName("btn_back")
-        self.btn_back.setGeometry(QtCore.QRect(288, 351, 75, 23))  # Position and size
+        self.btn_back.setGeometry(QtCore.QRect(270, 380, 113, 32))  # Position and size
 
         To_Do_List.setCentralWidget(self.centralwidget)  #central widget
         #menu bar
