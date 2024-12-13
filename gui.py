@@ -175,7 +175,7 @@ class Ui_To_Do_List(object):
             task_id = int(selected_items[0].text())
             message = self.logic.mark_completed(task_id)
             self.statusbar.showMessage(message)
-            self.refresh_view()
+            self.show_uncompleted_tasks()
 
     def search_task(self):
         keyword = self.lineEditSearch.text().strip()
