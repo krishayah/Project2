@@ -196,7 +196,7 @@ class Ui_To_Do_List(object):
             task_id = int(selected_items[0].text())
             message = self.logic.mark_completed(task_id)
             self.statusbar.showMessage(message)
-            self.refresh_view()  #refresh view
+            self.show_uncompleted_tasks()  #refresh view
 
     def search_task(self) -> None:
         """
