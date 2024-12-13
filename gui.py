@@ -170,6 +170,16 @@ class Ui_To_Do_List(object):
         Shows the status message "Added successfully!" & refreshes current view.
         """
         task_input = self.button_input.toPlainText().strip()
+
+        #check if input is empty or doesn't match correct format
+        if not task_input:
+            self.statusbar.showMessage("Error: Task input cannot be empty.")
+            return
+
+        if task_input.count(",") != 2: #should expect 2 commas
+            self. statusbar.showMessage("Error: Task input must be in the format 'Name, Category, Priority'.")
+            return
+
         message = self.logic.add_task(task_input)
         self.statusbar.showMessage(message)
         self.refresh_view()   #refresh view
