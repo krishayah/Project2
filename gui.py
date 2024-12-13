@@ -15,6 +15,7 @@ class Ui_To_Do_List(object):
             To_Do_List (QMainWindow): The main window of the application.
         """
         self.logic = APPLogic()
+        self.current_view = "all_tasks"
 
         To_Do_List.setObjectName("To_Do_List")
         To_Do_List.resize(640, 480)
@@ -146,11 +147,19 @@ class Ui_To_Do_List(object):
             self.widget_tasks.setItem(row, 2, QTableWidgetItem(task["category"]))
             self.widget_tasks.setItem(row, 3, QTableWidgetItem(task["priority"]))
 
+    def refresh_view(self):
+        if self.current_view == "all_tasks":
+            self.show_all_tasks()
+        elif self.current_view == "completed_tasks":
+            self.show_completed_tasks()
+        elif self.current_view == "uncompleted_tasks":
+            self.show_uncompleted_tasks()
+
     def add_task(self):
         task_input = self.button_input.toPlainText().strip()
         message = self.logic.add_task(task_input)
         self.statusbar.showMessage(message)
-        self.show_all_tasks()
+        self.refresh_view()
 
     def delete_task(self):
         selected_items = self.widget_tasks.selectedItems()
@@ -158,7 +167,7 @@ class Ui_To_Do_List(object):
             task_id = int(selected_items[0].text())
             message = self.logic.delete_task(task_id)
             self.statusbar.showMessage(message)
-            self.show_all_tasks()
+            self.refresh_view()
 
     def mark_completed(self):
         selected_items = self.widget_tasks.selectedItems()
@@ -166,7 +175,7 @@ class Ui_To_Do_List(object):
             task_id = int(selected_items[0].text())
             message = self.logic.mark_completed(task_id)
             self.statusbar.showMessage(message)
-            self.show_all_tasks()
+            self.refresh_view()
 
     def search_task(self):
         keyword = self.lineEditSearch.text().strip()
@@ -174,15 +183,18 @@ class Ui_To_Do_List(object):
         self.update_task_table(tasks)
 
     def show_all_tasks(self):
+        self.current_view = "all_tasks"  #update view
         tasks = self.logic.get_all_tasks()
         self.update_task_table(tasks)
 
     def show_completed_tasks(self):
+        self.current_view = "completed_view"  #update view
         tasks = self.logic.get_completed_tasks()
         self.update_task_table(tasks)
 
     def show_uncompleted_tasks(self):
         """Back button shows uncompleted list of tasks"""
+        self.current_view = "uncompleted_tasks" #update view
         tasks = self.logic.get_uncompleted_tasks()
         self.update_task_table(tasks)
 
